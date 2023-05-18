@@ -24,8 +24,8 @@ public class Student
     public void enrollToCourse( Course course ){
         //This If-Else Statement verifies if the student is already enroled by calling the IsAttending method. In case of not enrol the student.
             if (this.isAttendingCourse(course.getCode())){
-                System.out.println("The student is already enrolled");
-                System.out.println(this.courses);
+                System.out.println("The student is already enrolled in this course");
+
 
         }else{
                 this.courses.add(course);
@@ -42,7 +42,7 @@ public class Student
 
     public boolean isAttendingCourse( String courseCode )
     {
-        System.out.println("the is attending is being called");
+
         //This for loop goes through each student in the list and verify if the s current student is enrolled
         for (Course course : courses) {
 
@@ -51,7 +51,6 @@ public class Student
                 return true;
             }
         }
-        System.out.println("Is attending is returning false");
        return false;
     }
 
@@ -64,6 +63,6 @@ public class Student
     @Override
     public String toString()
     {
-        return "Student {" + super.toString() + "}";
+        return "Student {" + super.toString()+ ", "+courses + "}";
     }
 }

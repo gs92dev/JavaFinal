@@ -34,7 +34,6 @@ public class StudentService
             Student course = students.get(key);
 
             System.out.println( student  );
-            /*Here I need to use a for Loop for each student and display all the courses that this student is enroled, but for some reason I'm not able to get this information*/
 
         }
 

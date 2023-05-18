@@ -39,15 +39,15 @@ public class PrinterHelper
         String email = scanner.next();
         System.out.println( "| Enter student birth date(mm/dd/yyyy)|" );
         DateFormat formatter = new SimpleDateFormat( "MM/dd/yyyy");
-        //I tried this format of try catch but is not working properly yet.
-        Date birthDate = formatter.parse( scanner.next());
+        //Validation Date
+        Date birthDate = null;
+        while(birthDate==null){
+            try {
+            birthDate= formatter.parse( scanner.next());
+                } catch (Exception e) {
+                System.out.println("Invalid date format. Please provide a date in the format MM/dd/yyyy.");
 
-        try {
-            formatter.parse(scanner.next());
-            System.out.println("Date format is valid.");
-        } catch (ParseException e) {
-            System.out.println("Invalid date format. Please provide a date in the format MM/dd/yyyy.");
-            e.printStackTrace();
+            }
         }
         System.out.println( "|-------------------------------------|" );
         Student student = new Student( id, name, email, birthDate );
